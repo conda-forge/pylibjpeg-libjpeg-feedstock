@@ -12,6 +12,7 @@ source:
 
 build:
   number: 2
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   ignore_run_exports:
     - cython
