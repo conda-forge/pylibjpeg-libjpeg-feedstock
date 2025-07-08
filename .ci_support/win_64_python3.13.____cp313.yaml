@@ -2,8 +2,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-jpeg:
-- '9'
 m2w64_c_stdlib:
 - m2w64-sysroot
 m2w64_c_stdlib_version:
