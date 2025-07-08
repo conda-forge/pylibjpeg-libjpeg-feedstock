@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 jpeg:
 - '9'
 macos_machine:
@@ -26,5 +26,7 @@ pin_run_as_build:
     max_pin: x.x
 python:
 - 3.9.* *_cpython
+python_min:
+- '3.9'
 target_platform:
 - osx-64
