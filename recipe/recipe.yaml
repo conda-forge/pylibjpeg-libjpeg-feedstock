@@ -19,7 +19,7 @@ build:
 requirements:
   build:
     - if: win
-      then: 
+      then:
         - ${{ compiler('m2w64_cxx') }}
         - ${{ stdlib("m2w64_c") }}
       else:
@@ -55,10 +55,10 @@ tests:
       - pip check
 
 about:
-  summary: A Python wrapper for libjpeg, with a focus on use as a plugin for for pylibjpeg
+  homepage: https://github.com/pydicom/${{ name }}
   license: GPL-3.0-only
   license_file: LICENSE
-  homepage: https://github.com/pydicom/pylibjpeg-libjpeg
+  summary: A Python wrapper for libjpeg, with a focus on use as a plugin for for pylibjpeg
 
 extra:
   recipe-maintainers:
