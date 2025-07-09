@@ -13,13 +13,13 @@ source:
   sha256: ffb736acee1dfd446f387d45dfec83a144c7971e5cde290d9aafefa5dee99dd0
 
 build:
-  number: 3
+  number: 4
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     - if: win
-      then: 
+      then:
         - ${{ compiler('m2w64_cxx') }}
         - ${{ stdlib("m2w64_c") }}
       else:
@@ -55,10 +55,10 @@ tests:
       - pip check
 
 about:
-  summary: A Python wrapper for libjpeg, with a focus on use as a plugin for for pylibjpeg
+  homepage: https://github.com/pydicom/${{ name }}
   license: GPL-3.0-only
   license_file: LICENSE
-  homepage: https://github.com/pydicom/pylibjpeg-libjpeg
+  summary: A Python wrapper for libjpeg, with a focus on use as a plugin for for pylibjpeg
 
 extra:
   recipe-maintainers:
