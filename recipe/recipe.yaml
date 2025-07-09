@@ -13,7 +13,7 @@ source:
   sha256: ffb736acee1dfd446f387d45dfec83a144c7971e5cde290d9aafefa5dee99dd0
 
 build:
-  number: 4
+  number: 5
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -63,3 +63,4 @@ about:
 extra:
   recipe-maintainers:
     - psadil
+    - scaramallion

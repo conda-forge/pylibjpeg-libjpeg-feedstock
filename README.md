@@ -261,4 +261,5 @@ Feedstock Maintainers
 =====================
 
 * [@psadil](https://github.com/psadil/)
+* [@scaramallion](https://github.com/scaramallion/)
 
