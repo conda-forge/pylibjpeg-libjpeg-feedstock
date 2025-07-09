@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  name: pylibjpeg-libjpeg
+  version: 2.3.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pylibjpeg_libjpeg-${{ version }}.tar.gz
+  sha256: ffb736acee1dfd446f387d45dfec83a144c7971e5cde290d9aafefa5dee99dd0
+
+build:
+  number: 2
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  build:
+    - if: win
+      then: 
+        - ${{ compiler('m2w64_cxx') }}
+        - ${{ stdlib("m2w64_c") }}
+      else:
+        - ${{ compiler('cxx') }}
+        - ${{ stdlib("c") }}
+  host:
+    - cython >=3.0.10
+    - numpy >=2.0.0,<3.0.0
+    - pip
+    - poetry-core >=1.8,<2
+    - python
+    - setuptools
+  run:
+    - python
+    - numpy >=2.0.0,<3.0.0
+    - cython >=3.0.10
+  ignore_run_exports:
+    by_name:
+      - cython
+      - numpy
+      - python
+
+tests:
+  - python:
+      imports:
+        - libjpeg
+  - requirements:
+      run:
+        - cython >=3.0.10
+        - pip
+        - python
+    script:
+      - pip check
+
+about:
+  summary: A Python wrapper for libjpeg, with a focus on use as a plugin for for pylibjpeg
+  license: GPL-3.0-only
+  license_file: LICENSE
+  homepage: https://github.com/pydicom/pylibjpeg-libjpeg
+
+extra:
+  recipe-maintainers:
+    - psadil
