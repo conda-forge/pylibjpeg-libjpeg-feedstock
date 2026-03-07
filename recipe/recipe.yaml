@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pylibjpeg-libjpeg
-  version: 2.3.0
+  version: "2.4.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pylibjpeg_libjpeg-${{ version }}.tar.gz
-  sha256: ffb736acee1dfd446f387d45dfec83a144c7971e5cde290d9aafefa5dee99dd0
+  sha256: 2798ca404a8834447efefa89a03563ce93abdbe4146ea35901680f975959f501
 
 build:
-  number: 6
+  number: 0
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
